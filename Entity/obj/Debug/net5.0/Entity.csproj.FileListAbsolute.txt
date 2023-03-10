@@ -1,0 +1,12 @@
+/Users/onur/Projects/LayeredCoreProject/Entity/bin/Debug/net5.0/Entity.deps.json
+/Users/onur/Projects/LayeredCoreProject/Entity/bin/Debug/net5.0/Entity.dll
+/Users/onur/Projects/LayeredCoreProject/Entity/bin/Debug/net5.0/ref/Entity.dll
+/Users/onur/Projects/LayeredCoreProject/Entity/bin/Debug/net5.0/Entity.pdb
+/Users/onur/Projects/LayeredCoreProject/Entity/obj/Debug/net5.0/Entity.csproj.AssemblyReference.cache
+/Users/onur/Projects/LayeredCoreProject/Entity/obj/Debug/net5.0/Entity.GeneratedMSBuildEditorConfig.editorconfig
+/Users/onur/Projects/LayeredCoreProject/Entity/obj/Debug/net5.0/Entity.AssemblyInfoInputs.cache
+/Users/onur/Projects/LayeredCoreProject/Entity/obj/Debug/net5.0/Entity.AssemblyInfo.cs
+/Users/onur/Projects/LayeredCoreProject/Entity/obj/Debug/net5.0/Entity.csproj.CoreCompileInputs.cache
+/Users/onur/Projects/LayeredCoreProject/Entity/obj/Debug/net5.0/Entity.dll
+/Users/onur/Projects/LayeredCoreProject/Entity/obj/Debug/net5.0/ref/Entity.dll
+/Users/onur/Projects/LayeredCoreProject/Entity/obj/Debug/net5.0/Entity.pdb

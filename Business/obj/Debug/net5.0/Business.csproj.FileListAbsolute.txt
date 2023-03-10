@@ -1,0 +1,17 @@
+/Users/onur/Projects/LayeredCoreProject/Business/bin/Debug/net5.0/Business.deps.json
+/Users/onur/Projects/LayeredCoreProject/Business/bin/Debug/net5.0/Business.dll
+/Users/onur/Projects/LayeredCoreProject/Business/bin/Debug/net5.0/ref/Business.dll
+/Users/onur/Projects/LayeredCoreProject/Business/bin/Debug/net5.0/Business.pdb
+/Users/onur/Projects/LayeredCoreProject/Business/bin/Debug/net5.0/DataAccess.dll
+/Users/onur/Projects/LayeredCoreProject/Business/bin/Debug/net5.0/Entity.dll
+/Users/onur/Projects/LayeredCoreProject/Business/bin/Debug/net5.0/DataAccess.pdb
+/Users/onur/Projects/LayeredCoreProject/Business/bin/Debug/net5.0/Entity.pdb
+/Users/onur/Projects/LayeredCoreProject/Business/obj/Debug/net5.0/Business.csproj.AssemblyReference.cache
+/Users/onur/Projects/LayeredCoreProject/Business/obj/Debug/net5.0/Business.GeneratedMSBuildEditorConfig.editorconfig
+/Users/onur/Projects/LayeredCoreProject/Business/obj/Debug/net5.0/Business.AssemblyInfoInputs.cache
+/Users/onur/Projects/LayeredCoreProject/Business/obj/Debug/net5.0/Business.AssemblyInfo.cs
+/Users/onur/Projects/LayeredCoreProject/Business/obj/Debug/net5.0/Business.csproj.CoreCompileInputs.cache
+/Users/onur/Projects/LayeredCoreProject/Business/obj/Debug/net5.0/Business.csproj.CopyComplete
+/Users/onur/Projects/LayeredCoreProject/Business/obj/Debug/net5.0/Business.dll
+/Users/onur/Projects/LayeredCoreProject/Business/obj/Debug/net5.0/ref/Business.dll
+/Users/onur/Projects/LayeredCoreProject/Business/obj/Debug/net5.0/Business.pdb
