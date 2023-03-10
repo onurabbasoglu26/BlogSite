@@ -15,7 +15,6 @@ namespace Entity.Concrete
 
         public int BlogId { get; set; }
         public Blog Blogs { get; set; }
-
+        
     }
 }
-

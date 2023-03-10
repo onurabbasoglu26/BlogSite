@@ -19,14 +19,14 @@
   <ItemGroup>
     <None Remove="Concrete\" />
     <None Remove="Abstract\" />
-    <None Remove="Repositories\" />
     <None Remove="Migrations\" />
+    <None Remove="Concrete\Repositories\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Concrete\" />
     <Folder Include="Abstract\" />
-    <Folder Include="Repositories\" />
     <Folder Include="Migrations\" />
+    <Folder Include="Concrete\Repositories\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entity\Entity.csproj" />
