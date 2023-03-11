@@ -5,7 +5,7 @@ using DataAccess.Abstract;
 
 namespace DataAccess.Concrete.Repositories
 {
-    public class GenericRepository<T> : IRepository<T> where T : class
+    public class GenericRepository<T> : IGenericRepositoryDal<T> where T : class
     {
         Context c = new Context();
 

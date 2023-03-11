@@ -3,8 +3,8 @@ using Entity.Concrete;
 
 namespace DataAccess.Abstract
 {
-    public interface IBlogDal : IGenericRepositoryDal<Blog>
-    {
-    }
+	public interface ICommentDal:IGenericRepositoryDal<Comment>
+	{
+	}
 }
 

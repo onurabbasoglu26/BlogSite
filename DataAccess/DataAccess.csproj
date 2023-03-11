@@ -21,12 +21,14 @@
     <None Remove="Abstract\" />
     <None Remove="Migrations\" />
     <None Remove="Concrete\Repositories\" />
+    <None Remove="Concrete\EntityFramework\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Concrete\" />
     <Folder Include="Abstract\" />
     <Folder Include="Migrations\" />
     <Folder Include="Concrete\Repositories\" />
+    <Folder Include="Concrete\EntityFramework\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entity\Entity.csproj" />
