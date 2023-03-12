@@ -30,6 +30,11 @@ namespace Business.Concrete
             return _blogDal.GetList();
         }
 
+        public List<Blog> GetBlogListWithCategory()
+        {
+            return _blogDal.GetListWithCategory();
+        }
+
         public Blog GetByBlogId(int id)
         {
             throw new NotImplementedException();

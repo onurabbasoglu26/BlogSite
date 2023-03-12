@@ -14,7 +14,7 @@ namespace Presentation.Controllers
 
         public IActionResult Index()
         {
-            var values = blogManager.GetBlogList();
+            var values = blogManager.GetBlogListWithCategory();
             return View(values);
         }
     }

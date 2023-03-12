@@ -11,6 +11,7 @@ namespace Business.Abstract
 		void DeleteBlog(Blog blog);
 		List<Blog> GetBlogList();
 		Blog GetByBlogId(int id);
+		List<Blog> GetBlogListWithCategory();
 	}
 }
 
