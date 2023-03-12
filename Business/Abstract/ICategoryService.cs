@@ -10,7 +10,7 @@ namespace Business.Abstract
         void DeleteCategory(Category category);
         void UpdateCategory(Category category);
         List<Category> GetCategoryList();
-        Category GetCategoryById(int id);
+        Category GetByCategoryId(int id);
     }
 }
 
