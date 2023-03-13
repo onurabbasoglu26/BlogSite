@@ -17,5 +17,12 @@ namespace Presentation.Controllers
             var values = blogManager.GetBlogListWithCategory();
             return View(values);
         }
+
+        public IActionResult BlogDetails(int id)
+        {
+            ViewBag.id = id;
+            var values = blogManager.GetBlogList(id);
+            return View(values);
+        }
     }
 }

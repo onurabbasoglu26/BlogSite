@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 
 namespace DataAccess.Abstract
 {
@@ -8,7 +9,7 @@ namespace DataAccess.Abstract
         void Insert(T t);
         void Update(T t);
         void Delete(T t);
-        List<T> GetList();
+        List<T> GetList(Expression<Func<T, bool>> filter = null);
         T GetById(int id);
     }
 }

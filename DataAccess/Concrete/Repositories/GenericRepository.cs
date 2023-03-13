@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using DataAccess.Abstract;
 
 namespace DataAccess.Concrete.Repositories
@@ -20,9 +21,9 @@ namespace DataAccess.Concrete.Repositories
             return c.Set<T>().Find(id);
         }
 
-        public List<T> GetList()
+        public List<T> GetList(Expression<Func<T, bool>> filter = null)
         {
-            return c.Set<T>().ToList();
+            return filter == null ? c.Set<T>().ToList() : c.Set<T>().Where(filter).ToList();
         }
 
         public void Insert(T t)
