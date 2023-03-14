@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Business.Concrete;
 using DataAccess.Concrete.EntityFramework;
+using Entity.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Presentation.Controllers
@@ -17,8 +18,19 @@ namespace Presentation.Controllers
             return View();
         }
 
+        [HttpGet]
         public PartialViewResult AddComment()
         {
+            return PartialView();
+        }
+
+        [HttpPost]
+        public PartialViewResult AddComment(Comment comment)
+        {
+            comment.CommentStatus = true;
+            comment.CommentDate = DateTime.Parse(DateTime.Now.ToShortDateString());
+            comment.BlogId = 4;
+            commentManager.AddComment(comment);
             return PartialView();
         }
 
