@@ -49,6 +49,8 @@
     <Folder Include="ViewComponents\Blog\" />
     <Folder Include="Views\NewsLetter\" />
     <Folder Include="Views\ErrorPage\" />
+    <Folder Include="Views\About\" />
+    <Folder Include="Views\Contact\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Controllers\" />
@@ -65,5 +67,7 @@
     <None Remove="ViewComponents\Blog\" />
     <None Remove="Views\NewsLetter\" />
     <None Remove="Views\ErrorPage\" />
+    <None Remove="Views\About\" />
+    <None Remove="Views\Contact\" />
   </ItemGroup>
 </Project>
