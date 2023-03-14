@@ -28,6 +28,8 @@ namespace Presentation
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseStatusCodePagesWithReExecute("/ErrorPage/Error", "?code={0}");
+
             app.UseRouting();
             app.UseStaticFiles();
 
