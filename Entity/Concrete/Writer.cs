@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Entity.Concrete
@@ -17,6 +18,8 @@ namespace Entity.Concrete
         [Compare("WriterPassword", ErrorMessage = "Şifreler eşleşmiyor. Lütfen tekrar deneyin!")]
         public string ConfirmPassword { get; set; }
         public bool WriterStatus { get; set; }
+
+        public List<Blog> Blogs { get; set; }
     }
 }
 

@@ -35,7 +35,7 @@ namespace Presentation
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Category}/{action=Index}/{id?}");
+                    template: "{controller=Blog}/{action=Index}/{id?}");
             });
         }
     }
