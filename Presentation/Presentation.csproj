@@ -47,6 +47,7 @@
     <Folder Include="Views\Register\" />
     <Folder Include="Views\Login\" />
     <Folder Include="ViewComponents\Blog\" />
+    <Folder Include="Views\NewsLetter\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Controllers\" />
@@ -61,5 +62,6 @@
     <None Remove="Views\Register\" />
     <None Remove="Views\Login\" />
     <None Remove="ViewComponents\Blog\" />
+    <None Remove="Views\NewsLetter\" />
   </ItemGroup>
 </Project>

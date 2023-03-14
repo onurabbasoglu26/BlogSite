@@ -3,7 +3,7 @@ using Entity.Concrete;
 
 namespace DataAccess.Abstract
 {
-    public interface IContactDal : IGenericRepositoryDal<Contact>
+    public interface INewsLetterDal : IGenericRepositoryDal<NewsLetter>
     {
     }
 }
