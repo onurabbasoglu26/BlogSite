@@ -22,17 +22,25 @@ namespace Presentation.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index(Writer writer)
+        public IActionResult Index(Writer writer, string confirmPassword)
         {
             WriterValidator validationRules = new WriterValidator();
             ValidationResult results = validationRules.Validate(writer);
+
             if (results.IsValid)
             {
-                writer.WriterStatus = true;
-                writer.WriterAbout = "Deneme";
-                writer.WriterPassword = BCrypt.Net.BCrypt.HashPassword(writer.WriterPassword);
-                writerManager.AddWriter(writer);
-                return RedirectToAction("Index", "Blog");
+                if (writer.WriterPassword == confirmPassword)
+                {
+                    writer.WriterStatus = true;
+                    writer.WriterAbout = "Deneme";
+                    writer.WriterPassword = BCrypt.Net.BCrypt.HashPassword(writer.WriterPassword);
+                    writerManager.AddWriter(writer);
+                    return RedirectToAction("Index", "Blog");
+                }
+                else
+                {
+                    ModelState.AddModelError("WriterPassword", "Girdiğiniz şifreler eşleşmedi. Lütfen tekrar deneyiniz...");
+                }
             }
             else
             {
@@ -42,7 +50,6 @@ namespace Presentation.Controllers
                 }
             }
             return View();
-
         }
     }
 }

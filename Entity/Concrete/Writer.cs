@@ -12,11 +12,7 @@ namespace Entity.Concrete
         public string WriterAbout { get; set; }
         public string WriterImage { get; set; }
         public string WriterMail { get; set; }
-        [DataType(DataType.Password)]
         public string WriterPassword { get; set; }
-        [DataType(DataType.Password)]
-        [Compare("WriterPassword", ErrorMessage = "Şifreler eşleşmiyor. Lütfen tekrar deneyin!")]
-        public string ConfirmPassword { get; set; }
         public bool WriterStatus { get; set; }
 
         public List<Blog> Blogs { get; set; }
