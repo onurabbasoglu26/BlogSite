@@ -12,7 +12,7 @@ namespace Presentation.ViewComponents.Blog
 		public IViewComponentResult Invoke()
 		{
 			var values = blogManager.GetBlogListByWriter(1);
-			return View();
+			return View(values);
 		}
 	}
 }
