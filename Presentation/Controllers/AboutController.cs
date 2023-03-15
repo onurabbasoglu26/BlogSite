@@ -14,7 +14,7 @@ namespace Presentation.Controllers
 
         public IActionResult Index()
         {
-            var values = aboutManager.GetAboutList();
+            var values = aboutManager.GetList();
             return View(values);
         }
 

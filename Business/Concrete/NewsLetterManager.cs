@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Business.Abstract;
 using DataAccess.Abstract;
 using Entity.Concrete;
@@ -14,9 +15,29 @@ namespace Business.Concrete
             _newsLetter = newsLetter;
         }
 
-        public void AddNewsLetter(NewsLetter newsLetter)
+        public NewsLetter GetByTId(int id)
         {
-            _newsLetter.Insert(newsLetter);
+            throw new NotImplementedException();
+        }
+
+        public List<NewsLetter> GetList()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void TAdd(NewsLetter t)
+        {
+            _newsLetter.Insert(t);
+        }
+
+        public void TDelete(NewsLetter t)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void TUpdate(NewsLetter t)
+        {
+            throw new NotImplementedException();
         }
     }
 }

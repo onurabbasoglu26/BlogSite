@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "L4eo9+eEvx/vKcFhJJazQXzfLJC/OEV8YsZkBkPPLm4zfZ0ec3pquBt4Rm5cY1r8ySMZaPa1iPRTaFJ35l38GQ==",
+  "dgSpecHash": "UknKtSO5hyhZ0k0D40QU/o4Ap2zXOSkqDntYmk3ef0poyPO4SppmF+uVJ3VjzMxB/gfV+YS5GaUl785ABczXdw==",
   "success": true,
   "projectFilePath": "/Users/onur/Projects/LayeredCoreProject/Business/Business.csproj",
   "expectedPackageFiles": [
+    "/Users/onur/.nuget/packages/fluentvalidation/11.2.1/fluentvalidation.11.2.1.nupkg.sha512",
+    "/Users/onur/.nuget/packages/fluentvalidation.aspnetcore/11.2.2/fluentvalidation.aspnetcore.11.2.2.nupkg.sha512",
+    "/Users/onur/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.2.1/fluentvalidation.dependencyinjectionextensions.11.2.1.nupkg.sha512",
     "/Users/onur/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",
     "/Users/onur/.nuget/packages/microsoft.data.sqlclient/2.0.1/microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "/Users/onur/.nuget/packages/microsoft.data.sqlclient.sni.runtime/2.0.1/microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",

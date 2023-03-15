@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Business.Concrete;
 using Business.ValidationRules;
 using DataAccess.Concrete.EntityFramework;
@@ -34,7 +30,7 @@ namespace Presentation.Controllers
                     writer.WriterStatus = true;
                     writer.WriterAbout = "Deneme";
                     writer.WriterPassword = BCrypt.Net.BCrypt.HashPassword(writer.WriterPassword);
-                    writerManager.AddWriter(writer);
+                    writerManager.TAdd(writer);
                     return RedirectToAction("Index", "Blog");
                 }
                 else

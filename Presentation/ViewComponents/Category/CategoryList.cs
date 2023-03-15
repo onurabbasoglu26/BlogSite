@@ -11,7 +11,7 @@ namespace Presentation.ViewComponents.Category
 
 		public IViewComponentResult Invoke()
 		{
-			var values = categoryManager.GetCategoryList();
+			var values = categoryManager.GetList();
 			return View(values);
 		}
 	}

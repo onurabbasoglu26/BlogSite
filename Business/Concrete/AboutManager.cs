@@ -15,9 +15,29 @@ namespace Business.Concrete
             _aboutDal = aboutDal;
         }
 
-        public List<About> GetAboutList()
+        public About GetByTId(int id)
         {
-            return _aboutDal.GetList();
+            return _aboutDal.GetById(id);
+        }
+
+        public List<About> GetList()
+        {
+            return _aboutDal.GetListAll();
+        }
+
+        public void TAdd(About t)
+        {
+            _aboutDal.Insert(t);
+        }
+
+        public void TDelete(About t)
+        {
+            _aboutDal.Delete(t);
+        }
+
+        public void TUpdate(About t)
+        {
+            _aboutDal.Update(t);
         }
     }
 }

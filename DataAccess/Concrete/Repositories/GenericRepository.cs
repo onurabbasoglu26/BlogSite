@@ -21,7 +21,7 @@ namespace DataAccess.Concrete.Repositories
             return c.Set<T>().Find(id);
         }
 
-        public List<T> GetList(Expression<Func<T, bool>> filter = null)
+        public List<T> GetListAll(Expression<Func<T, bool>> filter = null)
         {
             return filter == null ? c.Set<T>().ToList() : c.Set<T>().Where(filter).ToList();
         }

@@ -4,9 +4,9 @@ using Entity.Concrete;
 
 namespace Business.Abstract
 {
-	public interface IAboutService
-	{
-		List<About> GetAboutList();
-	}
+    public interface IAboutService : IGenericService<About>
+    {
+
+    }
 }
 

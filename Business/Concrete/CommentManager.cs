@@ -15,14 +15,34 @@ namespace Business.Concrete
             _commentDal = commentDal;
         }
 
-        public void AddComment(Comment comment)
+        public Comment GetByTId(int id)
         {
-            _commentDal.Insert(comment);
+            return _commentDal.GetById(id);
         }
 
         public List<Comment> GetCommentList(int id)
         {
-            return _commentDal.GetList(x => x.BlogId == id);
+            return _commentDal.GetListAll(x => x.BlogId == id);
+        }
+
+        public List<Comment> GetList()
+        {
+            return _commentDal.GetListAll();
+        }
+
+        public void TAdd(Comment t)
+        {
+            _commentDal.Insert(t);
+        }
+
+        public void TDelete(Comment t)
+        {
+            _commentDal.Delete(t);
+        }
+
+        public void TUpdate(Comment t)
+        {
+            _commentDal.Update(t);
         }
     }
 }

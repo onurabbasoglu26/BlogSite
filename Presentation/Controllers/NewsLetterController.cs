@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Business.Concrete;
 using DataAccess.Concrete.EntityFramework;
 using Entity.Concrete;
@@ -23,7 +19,7 @@ namespace Presentation.Controllers
         public PartialViewResult SubscribeMail(NewsLetter newsLetter)
         {
             newsLetter.MailStatus = true;
-            newsLetterManager.AddNewsLetter(newsLetter);
+            newsLetterManager.TAdd(newsLetter);
             return PartialView();
         }
     }

@@ -16,29 +16,14 @@ namespace Business.Concrete
             _blogDal = blogDal;
         }
 
-        public void AddBlog(Blog blog)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void DeleteBlog(Blog blog)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Blog> GetBlogList()
-        {
-            return _blogDal.GetList();
-        }
-
         public List<Blog> GetBlogList(int id)
         {
-            return _blogDal.GetList(x => x.BlogId == id);
+            return _blogDal.GetListAll(x => x.BlogId == id);
         }
 
         public List<Blog> GetBlogListByWriter(int id)
         {
-            return _blogDal.GetList(x => x.WriterId == id);
+            return _blogDal.GetListAll(x => x.WriterId == id);
         }
 
         public List<Blog> GetBlogListWithCategory()
@@ -46,24 +31,39 @@ namespace Business.Concrete
             return _blogDal.GetListWithCategory();
         }
 
-        public Blog GetByBlogId(int id)
+        public Blog GetByTId(int id)
         {
-            throw new NotImplementedException();
+            return _blogDal.GetById(id);
         }
 
         public List<Blog> GetLastBlog()
         {
-            return _blogDal.GetList().TakeLast(1).ToList();
+            return _blogDal.GetListAll().TakeLast(1).ToList();
         }
 
         public List<Blog> GetLastBlogsList()
         {
-            return _blogDal.GetList().TakeLast(3).ToList();
+            return _blogDal.GetListAll().TakeLast(3).ToList();
         }
 
-        public void UpdateBlog(Blog blog)
+        public List<Blog> GetList()
         {
-            throw new NotImplementedException();
+            return _blogDal.GetListAll();
+        }
+
+        public void TAdd(Blog t)
+        {
+            _blogDal.Insert(t);
+        }
+
+        public void TDelete(Blog t)
+        {
+            _blogDal.Delete(t);
+        }
+
+        public void TUpdate(Blog t)
+        {
+            _blogDal.Update(t);
         }
     }
 }
