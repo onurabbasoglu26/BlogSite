@@ -51,6 +51,8 @@
     <Folder Include="Views\ErrorPage\" />
     <Folder Include="Views\About\" />
     <Folder Include="Views\Contact\" />
+    <Folder Include="Views\Shared\Components\LastBlogsList\" />
+    <Folder Include="Views\Shared\Components\LastBlog\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Controllers\" />
@@ -69,5 +71,7 @@
     <None Remove="Views\ErrorPage\" />
     <None Remove="Views\About\" />
     <None Remove="Views\Contact\" />
+    <None Remove="Views\Shared\Components\LastBlogsList\" />
+    <None Remove="Views\Shared\Components\LastBlog\" />
   </ItemGroup>
 </Project>

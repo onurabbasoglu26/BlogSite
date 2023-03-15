@@ -46,7 +46,7 @@
             <div class="row">
                 @await Html.PartialAsync("PartialAbout")
 
-                @await Html.PartialAsync("PartialLastestPost")
+                @await Component.InvokeAsync("LastBlogsList")
                 
                 <!-- subscribe -->
                 <div class="col-lg-4 subscribe-main footer-grid-agileits-w3ls text-left">

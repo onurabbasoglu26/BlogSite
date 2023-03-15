@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Business.Abstract;
 using DataAccess.Abstract;
 using Entity.Concrete;
@@ -48,6 +49,16 @@ namespace Business.Concrete
         public Blog GetByBlogId(int id)
         {
             throw new NotImplementedException();
+        }
+
+        public List<Blog> GetLastBlog()
+        {
+            return _blogDal.GetList().TakeLast(1).ToList();
+        }
+
+        public List<Blog> GetLastBlogsList()
+        {
+            return _blogDal.GetList().TakeLast(3).ToList();
         }
 
         public void UpdateBlog(Blog blog)
