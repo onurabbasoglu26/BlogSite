@@ -23,5 +23,10 @@ namespace Presentation.Controllers
             return View(values);
         }
 
+        public IActionResult BlogListByWriter()
+        {
+            var values = blogManager.GetBlogListByWriter(1);
+            return View(values);
+        }
     }
 }
