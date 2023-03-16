@@ -8,25 +8,99 @@
 <h1>Blog Listem</h1>
 <table class="table table-bordered">
     <tr>
-        <th>#</th>
+        <th style="width: 1%">#</th>
         <th>Blog Başlığı</th>
         <th>Oluşturma Tarihi</th>
         <th>Kategori</th>
         <th>Durum</th>
         <th>Düzenle</th>
         <th>Sil</th>
+        <th></th>
     </tr>
     @foreach (var item in Model)
-        {
-            <tr>
-                <th>@item.BlogId</th>
-                <td>@item.BlogTitle</td>
-                <td>@item.BlogCreateDate</td>
-                <td>@item.CategoryId</td>
-                <td>@item.BlogStatus</td>
-                <td><a href="#" class="btn btn-warning">Düzenle</a></td>
-                <td><a href="#" class="btn btn-danger">Sil</a></td>
-            </tr>
-        }
+    {
+        <tr>
+            <th>@item.BlogId</th>
+            <td>@item.BlogTitle</td>
+            <td>@item.BlogCreateDate</td>
+            <td>@item.Category.CategoryName</td>
+            <td>
+                @if (item.BlogStatus)
+                {
+                    <span class="badge badge-success">Aktif</span>
+                }
+                else
+                {
+                    <span class="badge badge-secondary">Pasif</span>
+                }
+            </td>
+
+            @*<td>
+                    @{
+                        string renk = "";
+                        string yazi = "";
+                        string buttonrenk = "";
+                    }
+                    @switch (item.BlogStatus)
+                    {
+                        case true:
+                            yazi = "Pasif Yap";
+                            renk = "badge badge-success";
+                            buttonrenk = "btn btn-warning";
+                            <p class="@renk">Aktif</p>
+                            break;
+                        case false:
+                            yazi = "Aktif Yap";
+                            renk = "badge badge-warning";
+                            buttonrenk = "btn btn-success";
+                            <p class="@renk">Pasif</p>
+                            break;
+                    }
+                </td>*@
+
+            <td><a href="#" class="btn btn-warning btn-sm">Düzenle</a></td>
+            <td><a href="/Blog/BlogDelete/@item.BlogId" class="btn btn-danger btn-sm btn-outline">Sil</a></td>
+
+            @*<td><a href="/Blog/BlogDelete/@item.BlogId" class="btn @buttonrenk btn-sm">@yazi</a></td>*@
+        </tr>
+    }
 </table>
-<a href="#" class="btn btn-primary">Yeni Blog Ekle</a>
+<a href="/Blog/BlogAdd/" class="btn btn-primary">Yeni Blog Ekle</a>
+
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="text/javascript">
+    // sweetalert delete
+    $('.btn-outline').on('click', function (e) {
+        e.preventDefault();
+        var url = $(this).attr('href');
+        Swal.fire({
+            title: 'Bloğu silmek istediğinizden emin misiniz?',
+            text: "Bu işlem geri alınamaz!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Evet, sil!',
+            cancelButtonText: 'Vazgeç'
+        }).then((result) => {
+            if (result.value) {
+                $.ajax({
+                    url: url,
+                    type: 'POST',
+                    success: function (result) {
+                        if (result) {
+                            Swal.fire(
+                                'Silindi!',
+                                'Blog başarıyla silindi.',
+                                'success'
+                            ).then(() => {
+                                location.reload();
+                            });
+                        }
+                    }
+                });
+            }
+        });
+    });
+</script>
