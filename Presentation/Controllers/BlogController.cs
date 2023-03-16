@@ -55,6 +55,15 @@ namespace Presentation.Controllers
         {
             BlogValidator validationRules = new BlogValidator();
             ValidationResult validationResult = validationRules.Validate(blog);
+
+            List<SelectListItem> categoryList = (from x in categoryManager.GetList()
+                                                 select new SelectListItem
+                                                 {
+                                                     Text = x.CategoryName,
+                                                     Value = x.CategoryId.ToString()
+                                                 }).ToList();
+            ViewBag.categoryList = categoryList;
+
             if (validationResult.IsValid)
             {
                 blog.BlogCreateDate = DateTime.Now;
@@ -85,6 +94,28 @@ namespace Presentation.Controllers
                 blogValue.BlogStatus = true;
             }
             blogManager.TUpdate(blogValue);
+            return RedirectToAction("BlogListByWriter");
+        }
+
+        [HttpGet]
+        public IActionResult BlogEdit(int id)
+        {
+            List<SelectListItem> categoryList = (from x in categoryManager.GetList()
+                                                 select new SelectListItem
+                                                 {
+                                                     Text = x.CategoryName,
+                                                     Value = x.CategoryId.ToString()
+                                                 }).ToList();
+            ViewBag.categoryList = categoryList;
+
+            var blogValue = blogManager.GetByTId(id);
+            return View(blogValue);
+        }
+
+        [HttpPost]
+        public IActionResult BlogEdit(Blog blog)
+        {
+            blogManager.TUpdate(blog);
             return RedirectToAction("BlogListByWriter");
         }
     }
