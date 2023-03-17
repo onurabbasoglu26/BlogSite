@@ -57,6 +57,10 @@
     <Folder Include="ViewComponents\Writer\" />
     <Folder Include="Views\Shared\Components\WriterNotification\" />
     <Folder Include="Views\Shared\Components\WriterMessageNotification\" />
+    <Folder Include="Views\Dashboard\" />
+    <Folder Include="Views\Shared\Components\BlogListDashboard\" />
+    <Folder Include="Views\Shared\Components\CategoryListDashboard\" />
+    <Folder Include="Views\Shared\Components\WriterAboutOnDashboard\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Controllers\" />
@@ -81,5 +85,9 @@
     <None Remove="ViewComponents\Writer\" />
     <None Remove="Views\Shared\Components\WriterNotification\" />
     <None Remove="Views\Shared\Components\WriterMessageNotification\" />
+    <None Remove="Views\Dashboard\" />
+    <None Remove="Views\Shared\Components\BlogListDashboard\" />
+    <None Remove="Views\Shared\Components\CategoryListDashboard\" />
+    <None Remove="Views\Shared\Components\WriterAboutOnDashboard\" />
   </ItemGroup>
 </Project>

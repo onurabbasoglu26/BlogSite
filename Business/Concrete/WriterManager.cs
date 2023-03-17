@@ -6,9 +6,9 @@ using Entity.Concrete;
 
 namespace Business.Concrete
 {
-	public class WriterManager : IWriterService
-	{
-		IWriterDal _writerDal;
+    public class WriterManager : IWriterService
+    {
+        IWriterDal _writerDal;
 
         public WriterManager(IWriterDal writerDal)
         {
@@ -23,6 +23,11 @@ namespace Business.Concrete
         public List<Writer> GetList()
         {
             return _writerDal.GetListAll();
+        }
+
+        public List<Writer> GetWriterById(int id)
+        {
+            return _writerDal.GetListAll(x => x.WriterId == id);
         }
 
         public void TAdd(Writer t)
