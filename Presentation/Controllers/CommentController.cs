@@ -30,6 +30,7 @@ namespace Presentation.Controllers
             comment.CommentStatus = true;
             comment.CommentDate = DateTime.Parse(DateTime.Now.ToShortDateString());
             comment.BlogId = 4;
+            comment.BlogScore = 8;
             commentManager.TAdd(comment);
             return PartialView();
         }
