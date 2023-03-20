@@ -1,3 +1,5 @@
+using System;
+using System.IO;
 using Business.Concrete;
 using Business.ValidationRules;
 using DataAccess.Concrete.EntityFramework;
@@ -5,6 +7,7 @@ using Entity.Concrete;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Presentation.Models;
 
 namespace Presentation.Controllers
 {
@@ -68,6 +71,35 @@ namespace Presentation.Controllers
             }
             return View();
 
+        }
+
+        [HttpGet]
+        public IActionResult WriterAdd()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult WriterAdd(AddProfileImage p)
+        {
+            Writer w = new Writer();
+            if (p.WriterImage != null)
+            {
+                var extension = Path.GetExtension(p.WriterImage.FileName);
+                var newImageName = Guid.NewGuid() + extension;
+                var location = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/WriterImageFiles/", newImageName);
+                var stream = new FileStream(location, FileMode.Create);
+                p.WriterImage.CopyTo(stream);
+                w.WriterImage = newImageName;
+            }
+            w.WriterMail = p.WriterMail;
+            w.WriterName = p.WriterName;
+            w.WriterPassword = p.WriterPassword;
+            w.WriterPassword = BCrypt.Net.BCrypt.HashPassword(w.WriterPassword);
+            w.WriterStatus = p.WriterStatus;
+            w.WriterAbout = p.WriterAbout;
+            writerManager.TAdd(w);
+            return RedirectToAction("Index", "Dashboard");
         }
     }
 }

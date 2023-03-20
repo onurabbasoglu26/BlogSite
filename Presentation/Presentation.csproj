@@ -32,6 +32,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />
+    <Content Remove="wwwroot\WriterImageFiles\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="wwwroot\" />
@@ -61,6 +62,7 @@
     <Folder Include="Views\Shared\Components\BlogListDashboard\" />
     <Folder Include="Views\Shared\Components\CategoryListDashboard\" />
     <Folder Include="Views\Shared\Components\WriterAboutOnDashboard\" />
+    <Folder Include="wwwroot\WriterImageFiles\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Controllers\" />
