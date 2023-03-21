@@ -20,6 +20,7 @@ namespace DataAccess.Concrete
         public DbSet<NewsLetter> NewsLetters { get; set; }
         public DbSet<BlogRating> BlogRatings { get; set; }
         public DbSet<Notification> Notifications { get; set; }
+        public DbSet<Message> Messages { get; set; }
 
     }
 }
