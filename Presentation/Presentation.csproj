@@ -64,6 +64,7 @@
     <Folder Include="Views\Shared\Components\WriterAboutOnDashboard\" />
     <Folder Include="wwwroot\WriterImageFiles\" />
     <Folder Include="Views\Notification\" />
+    <Folder Include="Views\Message\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Controllers\" />
@@ -93,5 +94,6 @@
     <None Remove="Views\Shared\Components\CategoryListDashboard\" />
     <None Remove="Views\Shared\Components\WriterAboutOnDashboard\" />
     <None Remove="Views\Notification\" />
+    <None Remove="Views\Message\" />
   </ItemGroup>
 </Project>

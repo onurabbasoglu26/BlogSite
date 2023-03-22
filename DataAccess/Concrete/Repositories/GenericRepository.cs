@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using DataAccess.Abstract;
+using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess.Concrete.Repositories
 {
