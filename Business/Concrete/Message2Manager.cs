@@ -6,9 +6,9 @@ using Entity.Concrete;
 
 namespace Business.Concrete
 {
-	public class Message2Manager : IMessage2Service
-	{
-		IMessage2Dal _message2Dal;
+    public class Message2Manager : IMessage2Service
+    {
+        IMessage2Dal _message2Dal;
 
         public Message2Manager(IMessage2Dal message2Dal)
         {
@@ -22,7 +22,7 @@ namespace Business.Concrete
 
         public List<Message2> GetInboxListByWriter(int id)
         {
-            return _message2Dal.GetListAll(x => x.ReceiverId == id);
+            return _message2Dal.GetListWithMessageByWriter(id);
         }
 
         public List<Message2> GetList()
