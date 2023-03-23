@@ -9,7 +9,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Presentation.Controllers
 {
-    [AllowAnonymous]
     public class DashboardController : Controller
     {
         readonly BlogManager blogManager = new BlogManager(new EfBlogDal());

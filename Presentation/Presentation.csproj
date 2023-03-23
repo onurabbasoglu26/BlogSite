@@ -65,6 +65,8 @@
     <Folder Include="wwwroot\WriterImageFiles\" />
     <Folder Include="Views\Notification\" />
     <Folder Include="Views\Message\" />
+    <Folder Include="Views\Admin\" />
+    <Folder Include="Areas\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Controllers\" />
@@ -95,5 +97,7 @@
     <None Remove="Views\Shared\Components\WriterAboutOnDashboard\" />
     <None Remove="Views\Notification\" />
     <None Remove="Views\Message\" />
+    <None Remove="Views\Admin\" />
+    <None Remove="Areas\" />
   </ItemGroup>
 </Project>

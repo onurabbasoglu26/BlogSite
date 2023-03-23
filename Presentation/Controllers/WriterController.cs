@@ -1,7 +1,9 @@
 using System;
 using System.IO;
+using System.Linq;
 using Business.Concrete;
 using Business.ValidationRules;
+using DataAccess.Concrete;
 using DataAccess.Concrete.EntityFramework;
 using Entity.Concrete;
 using FluentValidation.Results;
@@ -11,7 +13,7 @@ using Presentation.Models;
 
 namespace Presentation.Controllers
 {
-    [AllowAnonymous]
+
     public class WriterController : Controller
     {
         WriterManager writerManager = new WriterManager(new EfWriterDal());
@@ -39,7 +41,10 @@ namespace Presentation.Controllers
         [HttpGet]
         public IActionResult WriterEditProfile()
         {
-            var values = writerManager.GetByTId(1);
+            Context c = new Context();
+            var userMail = User.Identity.Name;
+            var writerId = c.Writers.Where(x => x.WriterMail == userMail).Select(y => y.WriterId).FirstOrDefault();
+            var values = writerManager.GetByTId(writerId);
             return View(values);
         }
 

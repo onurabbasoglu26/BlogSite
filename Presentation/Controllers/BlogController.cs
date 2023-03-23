@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Business.Concrete;
 using Business.ValidationRules;
+using DataAccess.Concrete;
 using DataAccess.Concrete.EntityFramework;
 using Entity.Concrete;
 using FluentValidation.Results;
@@ -12,7 +13,6 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Presentation.Controllers
 {
-    [AllowAnonymous]
     public class BlogController : Controller
     {
         BlogManager blogManager = new BlogManager(new EfBlogDal());
@@ -33,7 +33,10 @@ namespace Presentation.Controllers
 
         public IActionResult BlogListByWriter()
         {
-            var values = blogManager.GetBlogListWithCategoryByWriter(1);
+            Context c = new Context();
+            var userMail = User.Identity.Name;
+            var writerId = c.Writers.Where(x => x.WriterMail == userMail).Select(y => y.WriterId).FirstOrDefault();
+            var values = blogManager.GetBlogListWithCategoryByWriter(writerId);
             return View(values);
         }
 
@@ -56,6 +59,10 @@ namespace Presentation.Controllers
             BlogValidator validationRules = new BlogValidator();
             ValidationResult validationResult = validationRules.Validate(blog);
 
+            Context c = new Context();
+            var userMail = User.Identity.Name;
+            var writerId = c.Writers.Where(x => x.WriterMail == userMail).Select(y => y.WriterId).FirstOrDefault();
+
             List<SelectListItem> categoryList = (from x in categoryManager.GetList()
                                                  select new SelectListItem
                                                  {
@@ -68,7 +75,7 @@ namespace Presentation.Controllers
             {
                 blog.BlogCreateDate = DateTime.Now;
                 blog.BlogStatus = true;
-                blog.WriterId = 1;
+                blog.WriterId = writerId;
                 blogManager.TAdd(blog);
                 return RedirectToAction("BlogListByWriter", "Blog");
             }
