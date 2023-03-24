@@ -78,6 +78,12 @@
     <Folder Include="Areas\Admin\Views\Category\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Areas\Admin\Views\Blog\" />
+    <Folder Include="Areas\Admin\Views\Widget\" />
+    <Folder Include="Areas\Admin\ViewComponents\" />
+    <Folder Include="Areas\Admin\ViewComponents\Statistic\" />
+    <Folder Include="Areas\Admin\Views\Shared\Components\" />
+    <Folder Include="Areas\Admin\Views\Shared\Components\Statistic1\" />
+    <Folder Include="Areas\Admin\Views\Shared\Components\Statistic2\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Controllers\" />
@@ -118,5 +124,11 @@
     <None Remove="Areas\Admin\Views\Category\" />
     <None Remove="Areas\Admin\Views\Shared\" />
     <None Remove="Areas\Admin\Views\Blog\" />
+    <None Remove="Areas\Admin\Views\Widget\" />
+    <None Remove="Areas\Admin\ViewComponents\" />
+    <None Remove="Areas\Admin\ViewComponents\Statistic\" />
+    <None Remove="Areas\Admin\Views\Shared\Components\" />
+    <None Remove="Areas\Admin\Views\Shared\Components\Statistics1\" />
+    <None Remove="Areas\Admin\Views\Shared\Components\Statistic2\" />
   </ItemGroup>
 </Project>
