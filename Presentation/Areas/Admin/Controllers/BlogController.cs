@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using ClosedXML.Excel;
+using DataAccess.Concrete;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Presentation.Areas.Admin.Models;
@@ -51,6 +52,50 @@ namespace Presentation.Areas.Admin.Controllers
         }
 
         public IActionResult BlogListExcel()
+        {
+            return View();
+        }
+
+        public IActionResult ExportDynamicsExcelBlogList()
+        {
+            using (var workbook = new XLWorkbook())
+            {
+                var worksheet = workbook.Worksheets.Add("Blog Listesi");
+                worksheet.Cell(2, 2).Value = "Blog Id";
+                worksheet.Cell(2, 3).Value = "Blog Adı";
+
+                int BlogRowCount = 3;
+                foreach (var item in BlogTitleList())
+                {
+                    worksheet.Cell(BlogRowCount, 2).Value = item.Id;
+                    worksheet.Cell(BlogRowCount, 3).Value = item.BlogName;
+                    BlogRowCount++;
+                }
+
+                using (var stream = new MemoryStream())
+                {
+                    workbook.SaveAs(stream);
+                    var content = stream.ToArray();
+                    return File(content, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "Document.xlsx");
+                }
+            }
+        }
+
+        public List<BlogModel2> BlogTitleList()
+        {
+            List<BlogModel2> blogModels = new List<BlogModel2>();
+            using(var c = new Context())
+            {
+                blogModels = c.Blogs.Select(x => new BlogModel2
+                {
+                    Id = x.BlogId,
+                    BlogName = x.BlogTitle
+                }).ToList();
+            }
+            return blogModels;
+        }
+
+        public IActionResult BlogTitleListExcel()
         {
             return View();
         }
