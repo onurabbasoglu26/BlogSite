@@ -21,7 +21,7 @@ namespace Presentation
         {
             services.AddMvc();
             services.AddSession();
-            services.AddMvc(options => options.EnableEndpointRouting = false);
+
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(x =>
                 {
@@ -53,11 +53,16 @@ namespace Presentation
             app.UseAuthorization();
             app.UseAuthentication();
 
-            app.UseMvc(routes =>
+            app.UseEndpoints(endpoints =>
             {
-                routes.MapRoute(
+                endpoints.MapControllerRoute(
+                    name: "areas",
+                    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
+                endpoints.MapControllerRoute(
                     name: "default",
-                    template: "{controller=Blog}/{action=Index}/{id?}");
+                    pattern: "{controller=Blog}/{action=Index}/{id?}");
+
             });
         }
     }
