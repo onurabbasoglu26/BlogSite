@@ -84,6 +84,7 @@
     <Folder Include="Areas\Admin\Views\Shared\Components\" />
     <Folder Include="Areas\Admin\Views\Shared\Components\Statistic1\" />
     <Folder Include="Areas\Admin\Views\Shared\Components\Statistic2\" />
+    <Folder Include="Areas\Admin\Views\Shared\Components\Statistic4\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Controllers\" />
@@ -130,5 +131,6 @@
     <None Remove="Areas\Admin\Views\Shared\Components\" />
     <None Remove="Areas\Admin\Views\Shared\Components\Statistics1\" />
     <None Remove="Areas\Admin\Views\Shared\Components\Statistic2\" />
+    <None Remove="Areas\Admin\Views\Shared\Components\Statistic4\" />
   </ItemGroup>
 </Project>
